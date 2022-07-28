@@ -26,6 +26,7 @@ console.log("**********************Starting RPS***************************")
 
 // define the front player interact object
 const Player = (Who) => ({
+  ...stdlib.hasRandom,
   getHand: () => {
     // get a random int which is less than 3 
     const hand = Math.floor(Math.random() * 3);
