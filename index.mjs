@@ -37,6 +37,9 @@ const Player = (Who) => ({
   },
   seeOutcome: (outcome) => {
     console.log(`${Who} saw outcome ${OUTCOME[outcome]}`)
+  },
+  informTimeout: (Who) => {
+    console.log(`${Who} observed a timeout`);
   }
 });
 
@@ -46,6 +49,7 @@ await Promise.all([
     // inherit the Player interact object
     ...Player('Alice'),
     wager: stdlib.parseCurrency(5),
+    deadline: 10,
   }),
 
   ctcBob.p.Bob({
@@ -56,7 +60,6 @@ await Promise.all([
       console.log(`Bob accepts the wager of ${fmt(amt)}.`);
     }
   }),
-
 ]);
 
 const afterAlice = await getBalance(accAlice);
