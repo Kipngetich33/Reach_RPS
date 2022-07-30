@@ -140,5 +140,4 @@ export const main = Reach.App(() => {
     // call the see outcome function
     interact.seeOutcome(outcome)
   })
-
 });
